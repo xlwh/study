@@ -36,7 +36,7 @@ void* func2(void*) {
     if(x > y) {
         pthread_cond_signal(&ready);
     }
-    printf("func2 end");
+    printf("func2 end\n");
     return 0;
 }
 
@@ -45,12 +45,17 @@ int main(int argc, char **argv) {
     pthread_t t1, t2;
     int ret;
 
+    pthread_mutex_init(&lock, NULL);
+    pthread_cond_init(&ready, NULL);
+
     ret = pthread_create(&t1, NULL, func1, NULL);
     if(ret < 0) {
         printf("create thread error\n");
         return ret;
     }
 
+    
+    sleep(2);
     ret = pthread_create(&t2, NULL, func2, NULL);
     if(ret < 0) {
         printf("create thread error\n");
