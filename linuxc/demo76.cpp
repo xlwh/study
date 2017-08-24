@@ -2,9 +2,9 @@
 
 int main() {
     int ia[3][4] = {
-        {1, 2, 3},
-        {5, 6, 7},
-        {8, 9, 10}
+        {1, 2, 3, 8},
+        {5, 6, 7, 5},
+        {8, 9, 10, 6}
     };
 
     int (*p)[4] = ia;
@@ -24,5 +24,11 @@ int main() {
         }
     }
 
+    std::cout << "========= use 'begin' and 'end' ==============" << std::endl;
+    for(auto m = std::begin(ia); m != std::end(ia); ++m) {
+        for(auto q = std::begin(*m); q != std::end(*m); q++) {
+            std::cout << *q << "  " << std::endl;
+        }
+    }
     return 0;
 }
