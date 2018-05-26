@@ -8,10 +8,10 @@ func main() {
 		fmt.Println(c)
 	}
 
-    // 这种形式的写法，可以代替while使用
-    var j = 0
-    for j < 100 {
-        fmt.Println(j)
-        j ++;
-    }
+	// 这种形式的写法，可以代替while使用
+	var j = 0
+	for j < 100 {
+		fmt.Println(j)
+		j++
+	}
 }
